@@ -53,7 +53,7 @@
 
     {{-- Body --}}
     @if($commitment->body)
-    <div class="prose dark:prose-invert prose-zinc prose-p:text-zinc-700 dark:prose-p:text-zinc-300 prose-headings:text-zinc-900 dark:prose-headings:text-white max-w-none mb-12">
+    <div class="rich-content text-zinc-700 dark:text-zinc-300 max-w-none mb-12">
         {!! $commitment->body !!}
     </div>
     @endif

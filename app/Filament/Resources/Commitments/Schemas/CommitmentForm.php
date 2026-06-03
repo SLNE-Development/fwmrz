@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\Commitments\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -76,10 +76,17 @@ class CommitmentForm
                     ->multiple()
                     ->reorderable()
                     ->columnSpanFull(),
-                Textarea::make('body')
+                RichEditor::make('body')
                     ->label("Beschreibung")
                     ->columnSpanFull()
-                    ->rows(6)
+                    ->toolbarButtons([
+                        'bold', 'italic', 'underline', 'strike',
+                        'h2', 'h3',
+                        'bulletList', 'orderedList',
+                        'blockquote',
+                        'link',
+                        'undo', 'redo',
+                    ])
                     ->nullable(),
             ]);
     }

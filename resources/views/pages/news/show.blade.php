@@ -35,7 +35,7 @@
     @endif
 
     @if($news->body)
-    <div class="prose dark:prose-invert prose-zinc prose-p:text-zinc-700 dark:prose-p:text-zinc-300 prose-headings:text-zinc-900 dark:prose-headings:text-white prose-a:text-red-600 dark:prose-a:text-red-400 max-w-none mb-12 text-base leading-relaxed">
+    <div class="rich-content text-zinc-700 dark:text-zinc-300 max-w-none mb-12">
         {!! $news->body !!}
     </div>
     @endif

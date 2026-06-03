@@ -32,6 +32,14 @@ class NewsForm
                 RichEditor::make('body')
                     ->label("Inhalt")
                     ->columnSpanFull()
+                    ->toolbarButtons([
+                        'bold', 'italic', 'underline', 'strike',
+                        'h2', 'h3',
+                        'bulletList', 'orderedList',
+                        'blockquote',
+                        'link',
+                        'undo', 'redo',
+                    ])
                     ->nullable(),
                 Select::make('user_id')
                     ->label("Autor")

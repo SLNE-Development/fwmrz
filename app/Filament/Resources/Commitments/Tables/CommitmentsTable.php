@@ -28,7 +28,7 @@ class CommitmentsTable
                     ->placeholder('-')
                     ->searchable(),
                 TextColumn::make('author.name')
-                    ->label("Einsatzleiter")
+                    ->label("Autor")
                     ->placeholder('-')
                     ->searchable(),
                 TextColumn::make('publicity')

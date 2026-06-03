@@ -29,7 +29,7 @@ class CommitmentsRelationManager extends RelationManager
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('author.name')
-                    ->label("Einsatzleiter")
+                    ->label("Autor")
                     ->placeholder('-')
                     ->searchable(),
                 TextColumn::make('publicity')
