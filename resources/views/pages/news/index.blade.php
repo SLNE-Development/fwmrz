@@ -13,7 +13,7 @@
       <span class="text-zinc-300">Aktuelles</span>
     </div>
     <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Aktuelles</h1>
-    <p class="text-zinc-400">Neuigkeiten aus der Feuerwehr Merzenich – Lehrgänge, Fahrzeugübergaben, Veranstaltungen.</p>
+    <p class="text-zinc-400">Berichte und Neuigkeiten aus der Freiwilligen Feuerwehr Merzenich – Lehrgänge, Fahrzeugübergaben und Veranstaltungen.</p>
   </div>
 </div>
 

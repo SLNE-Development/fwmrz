@@ -21,8 +21,9 @@
       <span class="text-zinc-300">Mitmachen</span>
     </div>
     <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Mitmachen</h1>
-    <p class="text-zinc-400 max-w-2xl">Interesse? Wir freuen uns über jeden, der mitmacht – egal ob
-      jung, alt, erfahren oder Neuling. Man muss keine Vorkenntnisse mitbringen.</p>
+    <p class="text-zinc-400 max-w-2xl">Wir freuen uns über jede Verstärkung – ob im aktiven Dienst,
+      in der Jugendfeuerwehr oder als förderndes Mitglied. Vorkenntnisse sind nicht
+      erforderlich.</p>
   </div>
 </div>
 
@@ -30,8 +31,9 @@
 
   {{-- Intro --}}
   <div class="text-center max-w-2xl mx-auto">
-    <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed text-lg">Von 6 bis 67 – bei uns gibt
-      es für jedes Alter den richtigen Einstieg.
+    <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed text-lg">Von der Kinderfeuerwehr ab 6
+      Jahren bis zum aktiven Einsatzdienst – bei der Feuerwehr Merzenich ist für jedes Alter der
+      passende Einstieg dabei.
     </p>
   </div>
 
@@ -65,13 +67,13 @@
       <div class="p-8">
         <h2 class="text-xl font-bold text-zinc-900 dark:text-white mb-3">Freiwillige Feuerwehr</h2>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-          Ab <strong class="text-zinc-900 dark:text-white">17 Jahren</strong> kannst du in den
-          aktiven Einsatzdienst eintreten. Nach einer fundierten Grundausbildung rückst du mit aus –
-          bei Bränden, Unfällen, Unwettern.
+          Ab <strong class="text-zinc-900 dark:text-white">17 Jahren</strong> können Sie in den
+          aktiven Einsatzdienst eintreten. Nach einer Grundausbildung rücken Sie gemeinsam mit Ihren
+          Kameradinnen und Kameraden zu Bränden, Unfällen und Unwettereinsätzen aus.
         </p>
         <ul class="space-y-2 text-sm text-zinc-700 dark:text-zinc-300 mb-8">
           @foreach(['Grundausbildung & Atemschutz', 'Technische Hilfeleistung & Menschenrettung',
-          'Kameradschaft über die Ortsgrenzen hinaus', 'Moderne Fahrzeuge & Ausrüstung'] as $feat)
+          'Moderne Fahrzeuge & Ausrüstung'] as $feat)
           <li class="flex items-center gap-2">
             <svg class="w-4 h-4 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor" stroke-width="2.5">
@@ -119,9 +121,9 @@
       <div class="p-8">
         <h2 class="text-xl font-bold text-zinc-900 dark:text-white mb-3">Jugendfeuerwehr</h2>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-          Ab <strong class="text-zinc-900 dark:text-white">10 Jahren</strong> geht's los. In der
-          Jugendfeuerwehr lernen die Mitglieder, was es bedeutet, Feuerwehr zu sein – ohne den
-          vollen Einsatzdruck. Übungen, Zeltlager, gemeinsame Aktionen.
+          Ab <strong class="text-zinc-900 dark:text-white">10 Jahren</strong> können Jugendliche der
+          Jugendfeuerwehr beitreten. Neben Übungen und Wettkämpfen stehen gemeinsame Aktionen und
+          Zeltlager auf dem Programm – ein idealer Einstieg in das Feuerwehrleben.
         </p>
         <ul class="space-y-2 text-sm text-zinc-700 dark:text-zinc-300 mb-8">
           @foreach(['Übungen & Wettkämpfe', 'Zeltlager & Ausflüge', 'Erste Einblicke in Technik &
@@ -169,9 +171,9 @@
       <div class="p-8">
         <h2 class="text-xl font-bold text-zinc-900 dark:text-white mb-3">Kinderfeuerwehr</h2>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-          Schon ab <strong class="text-zinc-900 dark:text-white">6 Jahren</strong> können Kinder bei
-          uns reinschnuppern. Keine Einsätze natürlich – dafür Spiele, Basteln, Besichtigungen und
-          ein erster Blick auf die Fahrzeuge.
+          Schon ab <strong class="text-zinc-900 dark:text-white">6 Jahren</strong> können Kinder die
+          Feuerwehr kennenlernen. Im Mittelpunkt stehen spielerische Aktivitäten,
+          Fahrzeugbesichtigungen und gemeinsame Veranstaltungen – ganz ohne Einsatzdruck.
         </p>
         <ul class="space-y-2 text-sm text-zinc-700 dark:text-zinc-300 mb-8">
           @foreach(['Spielen & Entdecken', 'Fahrzeugbesichtigungen', 'Gemeinsame Aktionen & Feste',
@@ -225,9 +227,9 @@
       class="bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 text-center">
     <h2 class="text-xl font-bold text-zinc-900 dark:text-white mb-3">Fördernde Mitgliedschaft</h2>
     <p class="text-zinc-600 dark:text-zinc-400 max-w-lg mx-auto leading-relaxed">
-      Du willst uns unterstützen, aber aktiv im Einsatz sein passt gerade nicht? Kein Problem – als
-      förderndes Mitglied hilfst du uns trotzdem, die Arbeit der Feuerwehr in Merzenich am Laufen zu
-      halten.
+      Wer die Feuerwehr unterstützen möchte, ohne aktiv im Einsatzdienst tätig zu sein, ist als
+      förderndes Mitglied herzlich willkommen. Jede Unterstützung trägt dazu bei, die Arbeit der
+      Freiwilligen Feuerwehr Merzenich zu stärken.
     </p>
   </div>
 </div>

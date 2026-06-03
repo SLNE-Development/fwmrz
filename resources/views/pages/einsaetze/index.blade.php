@@ -15,7 +15,7 @@
     </div>
     <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Einsätze</h1>
     <p class="text-zinc-400 max-w-2xl">
-      Wir berichten hier über unsere Einsätze – soweit es Datenschutz und Einsatzgeschehen erlauben. Fotos entstehen nur, wenn der Einsatz das zulässt.
+      Wir berichten hier über unsere Einsätze – soweit Datenschutz und Einsatzgeschehen es erlauben. Foto- und Videoaufnahmen entstehen nur, wenn die Lage dies zulässt.
     </p>
   </div>
 </div>

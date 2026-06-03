@@ -17,7 +17,7 @@
             <span>›</span><span class="text-zinc-300">Kontakt</span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Kontakt</h1>
-        <p class="text-zinc-400">Fragen, Anregungen oder Interesse am Mitmachen? Schreibt uns – wir antworten so schnell es geht.</p>
+        <p class="text-zinc-400">Bei Fragen, Anregungen oder Interesse an einer Mitgliedschaft stehen wir Ihnen gerne zur Verfügung.</p>
     </div>
 </div>
 {{-- Gerätehaus Foto Platzhalter --}}

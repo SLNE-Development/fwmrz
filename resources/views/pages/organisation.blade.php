@@ -13,8 +13,9 @@
       <span class="text-zinc-300">Organisation</span>
     </div>
     <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Organisation</h1>
-    <p class="text-zinc-400 max-w-2xl">Wir sind eine rein ehrenamtliche Wehr – alle Kameradinnen und
-      Kameraden gehen hauptberuflich anderen Tätigkeiten nach und rücken im Einsatzfall aus.</p>
+    <p class="text-zinc-400 max-w-2xl">Die Freiwillige Feuerwehr Merzenich besteht ausschließlich
+      aus ehrenamtlichen Kräften, die neben ihrem Beruf für die Sicherheit der Gemeinde im Einsatz
+      sind.</p>
   </div>
 </div>
 
@@ -29,8 +30,8 @@
         <h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white mb-4">
           Wehrleitung</h2>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-          Die Wehrleitung trägt die Gesamtverantwortung für Einsatz, Ausbildung und Verwaltung. Dazu
-          gehört unter anderem:
+          Die Wehrleitung trägt die Gesamtverantwortung für Einsatz, Ausbildung und Verwaltung der
+          Feuerwehr Merzenich. Zu ihren Aufgaben gehören unter anderem:
         </p>
         <ul class="space-y-3 mb-8">
           @foreach(['Einsatzplanung und -führung', 'Ausbildungskoordination der vier Löschgruppen',
