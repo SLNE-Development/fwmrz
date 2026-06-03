@@ -77,7 +77,6 @@ class AdminPanelProvider extends PanelProvider
             ->id("admin")
             ->path("/admin")
             ->login()
-            ->registration()
             ->maxContentWidth(Width::Full)
             ->readOnlyRelationManagersOnResourceViewPagesByDefault(false)
             ->sidebarFullyCollapsibleOnDesktop()
