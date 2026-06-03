@@ -21,7 +21,7 @@ use UnitEnum;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
-    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Dashboard;
+    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Admin;
 
     protected static ?string $label = 'Benutzer';
     protected static ?string $pluralLabel = 'Benutzerverwaltung';
@@ -54,10 +54,10 @@ class UserResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'  => ListUsers::route('/'),
+            'index' => ListUsers::route('/'),
             'create' => CreateUser::route('/create'),
-            'view'   => ViewUser::route('/{record}'),
-            'edit'   => EditUser::route('/{record}/edit'),
+            'view' => ViewUser::route('/{record}'),
+            'edit' => EditUser::route('/{record}/edit'),
         ];
     }
 }
