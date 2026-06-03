@@ -7,9 +7,7 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 
 class UsersTable
 {
@@ -33,29 +31,8 @@ class UsersTable
                     ->color('warning')
                     ->searchable()
                     ->toggleable(),
-
-                TextColumn::make('email_verified_at')
-                    ->label('Verifiziert')
-                    ->dateTime('d.m.Y')
-                    ->sortable()
-                    ->placeholder('—')
-                    ->toggleable(),
-
-                TextColumn::make('created_at')
-                    ->label('Erstellt')
-                    ->dateTime('d.m.Y')
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->filters([
-                Filter::make('verified')
-                    ->label('E-Mail verifiziert')
-                    ->query(fn(Builder $query) => $query->whereNotNull('email_verified_at')),
-
-                Filter::make('unverified')
-                    ->label('Nicht verifiziert')
-                    ->query(fn(Builder $query) => $query->whereNull('email_verified_at')),
-            ])
+            ->filters([])
             ->recordActions([
                 ActionGroup::make([
                     ViewAction::make(),
