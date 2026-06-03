@@ -35,14 +35,16 @@ class AdminPanelProvider extends PanelProvider
 
         FilamentTimezone::set("Europe/Berlin");
 
-        TextColumn::configureUsing(fn(TextColumn $column) => $column
-            ->timezone("Europe/Berlin")
-            ->placeholder("-")
+        TextColumn::configureUsing(
+            fn(TextColumn $column) => $column
+                ->timezone("Europe/Berlin")
+                ->placeholder("-")
         );
 
-        TextEntry::configureUsing(fn(TextEntry $entry) => $entry
-            ->timezone("Europe/Berlin")
-            ->placeholder("-")
+        TextEntry::configureUsing(
+            fn(TextEntry $entry) => $entry
+                ->timezone("Europe/Berlin")
+                ->placeholder("-")
         );
 
         Fieldset::configureUsing(fn(Fieldset $fieldset) => $fieldset
@@ -95,11 +97,12 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->plugin(FilamentAuthorizationPlugin::make()
-                ->withAuthHome("filament.admin.home")
-                ->withNavigationGroup(SidebarNavigation::Admin)
-                ->withNavigationSortIndex(100)
-                ->withUserModel(User::class)
+            ->plugin(
+                FilamentAuthorizationPlugin::make()
+                    ->withAuthHome("filament.admin.auth.login")
+                    ->withNavigationGroup(SidebarNavigation::Admin)
+                    ->withNavigationSortIndex(100)
+                    ->withUserModel(User::class)
             )
             ->favicon(asset('images/logo/logo.png'))
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
