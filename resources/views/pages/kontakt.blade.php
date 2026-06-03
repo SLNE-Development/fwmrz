@@ -17,7 +17,7 @@
             <span>›</span><span class="text-zinc-300">Kontakt</span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Kontakt</h1>
-        <p class="text-zinc-400">Kontakt aufnehmen mit der Feuerwehr Merzenich.</p>
+        <p class="text-zinc-400">Fragen, Anregungen oder Interesse am Mitmachen? Schreibt uns – wir antworten so schnell es geht.</p>
     </div>
 </div>
 {{-- Gerätehaus Foto Platzhalter --}}

@@ -26,7 +26,7 @@
                 Wir schützen<br><span class="text-red-400">Merzenich</span>
             </h1>
             <p class="text-lg sm:text-xl text-zinc-300 leading-relaxed mb-10 max-w-xl">
-                Vier Löschgruppen, rund 100 ehrenamtliche Kameradinnen und Kameraden – jederzeit bereit für Euch.
+                Seit Jahrzehnten rücken unsere Kameradinnen und Kameraden aus – bei jedem Wetter, zu jeder Stunde. Ehrenamtlich.
             </p>
             <div class="flex flex-wrap gap-4">
                 <a href="{{ route('einsaetze.index') }}"
@@ -129,9 +129,9 @@
 <section class="border-y border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-10">
-            <span class="text-xs text-red-600 dark:text-red-400 font-semibold uppercase tracking-widest">Technik</span>
+            <span class="text-xs text-red-600 dark:text-red-400 font-semibold uppercase tracking-widest">Fahrzeuge</span>
             <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mt-1 mb-2">Unsere Fahrzeuge</h2>
-            <p class="text-zinc-500 dark:text-zinc-400 max-w-xl">Moderne Einsatzfahrzeuge für alle Lagen – von der Brandbekämpfung bis zur technischen Hilfeleistung.</p>
+            <p class="text-zinc-500 dark:text-zinc-400 max-w-xl">Ein kleiner Einblick in unsere Fahrzeugflotte – von der Brandbekämpfung bis zur Technischen Hilfeleistung.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -184,7 +184,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-3">Unsere Löschgruppen</h2>
-            <p class="text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">Vier Einheiten in der Gemeinde Merzenich – stets einsatzbereit.</p>
+            <p class="text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">In Merzenich, Golzheim, Morschenich und Girbelsrath – vier Einheiten, eine Wehr.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach([
@@ -234,8 +234,8 @@
         </div>
         <div class="relative px-8 sm:px-14 py-16 text-center">
             <span class="inline-block text-xs text-red-400 font-semibold uppercase tracking-widest mb-4">Ehrenamt</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Werde Teil unserer Gemeinschaft</h2>
-            <p class="text-zinc-300 max-w-lg mx-auto mb-8 leading-relaxed">Ab dem 10. Lebensjahr in der Jugendfeuerwehr – ab 17 in der aktiven Abteilung. Jeder ist willkommen!</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Du willst mitmachen?</h2>
+            <p class="text-zinc-300 max-w-lg mx-auto mb-8 leading-relaxed">Ob Kinderfeuerwehr ab 6, Jugendfeuerwehr ab 10 oder aktiver Dienst ab 17 – bei uns ist jeder willkommen, der anpacken möchte.</p>
             <a href="{{ route('mitmachen') }}"
                class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 shadow-xl shadow-red-900/40 hover:-translate-y-0.5">
                 Jetzt Mitmachen

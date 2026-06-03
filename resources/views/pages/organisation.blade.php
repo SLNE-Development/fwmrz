@@ -13,8 +13,8 @@
       <span class="text-zinc-300">Organisation</span>
     </div>
     <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Organisation</h1>
-    <p class="text-zinc-400 max-w-2xl">Die Feuerwehr Merzenich ist eine freiwillige Feuerwehr, die
-      ausschließlich aus ehrenamtlichen Kräften besteht.</p>
+    <p class="text-zinc-400 max-w-2xl">Wir sind eine rein ehrenamtliche Wehr – alle Kameradinnen und
+      Kameraden gehen hauptberuflich anderen Tätigkeiten nach und rücken im Einsatzfall aus.</p>
   </div>
 </div>
 
@@ -29,11 +29,13 @@
         <h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white mb-4">
           Wehrleitung</h2>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-          Geleitet wird die Wehr durch die Wehrleitung. Diese ist unter anderem zuständig für:
+          Die Wehrleitung trägt die Gesamtverantwortung für Einsatz, Ausbildung und Verwaltung. Dazu
+          gehört unter anderem:
         </p>
         <ul class="space-y-3 mb-8">
-          @foreach(['Organisation & Planung', 'Personal & Personalentwicklung', 'Fahrzeug- und
-          Gerätetechnik', 'Ausbildungskoordination'] as $task)
+          @foreach(['Einsatzplanung und -führung', 'Ausbildungskoordination der vier Löschgruppen',
+          'Beschaffung und Pflege von Fahrzeugen und Gerät', 'Ansprechpartner für Gemeinde und
+          Behörden'] as $task)
           <li class="flex items-center gap-3 text-zinc-700 dark:text-zinc-300 text-sm">
                         <span
                             class="w-5 h-5 rounded-full bg-red-100 dark:bg-red-900/40 border border-red-200 dark:border-red-800/40 flex items-center justify-center shrink-0">
@@ -105,10 +107,11 @@
     <div class="mb-8">
       <span
           class="inline-block text-xs text-red-600 dark:text-red-400 font-semibold uppercase tracking-widest mb-3">Einheiten</span>
-      <h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white mb-3">Unsere
+      <h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white mb-4">Unsere
         Löschgruppen</h2>
-      <p class="text-zinc-600 dark:text-zinc-400 max-w-2xl">Innerhalb unserer Gemeinde gibt es 4
-        Löschgruppen in Merzenich, Golzheim, Morschenich und Girbelsrath.</p>
+      <p class="text-zinc-600 dark:text-zinc-400 max-w-2xl">Die Gemeinde Merzenich hat vier
+        Ortsteile – und in jedem steht ein Gerätehaus. Merzenich, Golzheim, Morschenich und
+        Girbelsrath bilden gemeinsam die Feuerwehr der Gemeinde.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
