@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\CommitmentTypes\Tables;
 
 use Filament\Actions\ActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
@@ -31,6 +32,7 @@ class CommitmentTypesTable
                 ActionGroup::make([
                     ViewAction::make(),
                     EditAction::make(),
+                    DeleteAction::make()
                 ])
             ])
             ->toolbarActions([]);

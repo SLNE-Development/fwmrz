@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Stations\Tables;
 
 use Filament\Actions\ActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
@@ -23,6 +24,7 @@ class StationsTable
                 ActionGroup::make([
                     ViewAction::make(),
                     EditAction::make(),
+                    DeleteAction::make()
                 ])
             ])
             ->toolbarActions([]);

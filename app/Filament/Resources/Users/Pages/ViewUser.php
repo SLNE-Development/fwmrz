@@ -15,8 +15,7 @@ class ViewUser extends ViewRecord
     {
         return [
             EditAction::make(),
-            DeleteAction::make()
-                ->requiresConfirmation(),
+            DeleteAction::make(),
         ];
     }
 }

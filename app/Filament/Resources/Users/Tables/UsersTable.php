@@ -37,8 +37,7 @@ class UsersTable
                 ActionGroup::make([
                     ViewAction::make(),
                     EditAction::make(),
-                    DeleteAction::make()
-                        ->requiresConfirmation(),
+                    DeleteAction::make(),
                 ]),
             ])
             ->defaultSort('name');

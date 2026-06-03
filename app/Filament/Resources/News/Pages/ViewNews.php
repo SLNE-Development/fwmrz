@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\News\Pages;
 
 use App\Filament\Resources\News\NewsResource;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -14,6 +15,7 @@ class ViewNews extends ViewRecord
     {
         return [
             EditAction::make(),
+            DeleteAction::make()
         ];
     }
 }

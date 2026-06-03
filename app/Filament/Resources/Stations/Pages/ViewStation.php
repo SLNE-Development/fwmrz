@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Stations\Pages;
 
 use App\Filament\Resources\Stations\StationResource;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -14,6 +15,7 @@ class ViewStation extends ViewRecord
     {
         return [
             EditAction::make(),
+            DeleteAction::make()
         ];
     }
 }

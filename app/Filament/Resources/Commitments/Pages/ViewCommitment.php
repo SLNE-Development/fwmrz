@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Commitments\Pages;
 
 use App\Filament\Resources\Commitments\CommitmentResource;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -14,6 +15,7 @@ class ViewCommitment extends ViewRecord
     {
         return [
             EditAction::make(),
+            DeleteAction::make()
         ];
     }
 }
