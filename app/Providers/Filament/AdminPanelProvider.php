@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Models\User;
 use App\Utils\SidebarNavigation;
+use Filament\Actions\DeleteAction;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Infolists\Components\TextEntry;
@@ -32,6 +33,10 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         DatabaseNotifications::pollingInterval(null);
+
+        DeleteAction::configureUsing(fn(DeleteAction $action) => $action
+            ->requiresConfirmation()
+        );
 
         FilamentTimezone::set("Europe/Berlin");
 
