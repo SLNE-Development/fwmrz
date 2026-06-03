@@ -25,11 +25,6 @@ class CommitmentTypesTable
                 TextColumn::make('aaoName')
                     ->label("AAO-Bezeichnung")
                     ->searchable(),
-                TextColumn::make('created_at')
-                    ->label("Erstellt am")
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([])
             ->recordActions([

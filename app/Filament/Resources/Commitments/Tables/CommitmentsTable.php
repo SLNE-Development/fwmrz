@@ -40,10 +40,6 @@ class CommitmentsTable
                         default => $state,
                     })
                     ->sortable(),
-                TextColumn::make('created_at')
-                    ->label("Erstellt am")
-                    ->dateTime()
-                    ->sortable(),
             ])
             ->filters([])
             ->recordActions([

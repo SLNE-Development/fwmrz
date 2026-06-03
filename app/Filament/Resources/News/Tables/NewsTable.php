@@ -36,10 +36,6 @@ class NewsTable
                 IconColumn::make('static')
                     ->label("Statisch")
                     ->boolean(),
-                TextColumn::make('created_at')
-                    ->label("Erstellt am")
-                    ->dateTime()
-                    ->sortable(),
             ])
             ->filters([])
             ->recordActions([
