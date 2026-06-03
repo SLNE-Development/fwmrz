@@ -35,7 +35,7 @@
         </p>
         <ul class="space-y-3 mb-8">
           @foreach(['Einsatzplanung und -führung', 'Ausbildungskoordination der vier Löschgruppen',
-          'Beschaffung und Pflege von Fahrzeugen und Gerät', 'Ansprechpartner für Gemeinde und
+          'Beschaffung von Fahrzeugen und Gerät', 'Ansprechpartner für Gemeinde und
           Behörden'] as $task)
           <li class="flex items-center gap-3 text-zinc-700 dark:text-zinc-300 text-sm">
                         <span
