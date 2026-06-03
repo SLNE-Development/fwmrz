@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources\News\Schemas;
 
-use Filament\Infolists\Components\IconEntry;
+use Filament\Infolists\Components\SpatieMediaLibraryImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
-use Filament\Infolists\Components\SpatieMediaLibraryImageEntry;
 use Filament\Schemas\Schema;
 
 class NewsInfolist
@@ -26,15 +25,12 @@ class NewsInfolist
                             ->placeholder('-'),
                         TextEntry::make('publicity')
                             ->label("Sichtbarkeit")
-                            ->formatStateUsing(fn (int $state) => match ($state) {
+                            ->formatStateUsing(fn(int $state) => match ($state) {
                                 0 => 'Privat',
                                 1 => 'Intern',
                                 2 => 'Öffentlich',
                                 default => $state,
                             }),
-                        IconEntry::make('static')
-                            ->label("Statisch")
-                            ->boolean(),
                         TextEntry::make('body')
                             ->label("Inhalt")
                             ->columnSpanFull()

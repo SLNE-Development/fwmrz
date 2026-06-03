@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\News;
 
+use App\Filament\Resources\News\Pages\CreateNews;
+use App\Filament\Resources\News\Pages\EditNews;
 use App\Filament\Resources\News\Pages\ListNews;
 use App\Filament\Resources\News\Pages\ViewNews;
 use App\Filament\Resources\News\Schemas\NewsForm;
@@ -49,8 +51,10 @@ class NewsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListNews::route('/'),
-            'view'  => ViewNews::route('/{record}'),
+            'index'  => ListNews::route('/'),
+            'create' => CreateNews::route('/create'),
+            'view'   => ViewNews::route('/{record}'),
+            'edit'   => EditNews::route('/{record}/edit'),
         ];
     }
 }

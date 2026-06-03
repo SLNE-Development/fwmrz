@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Commitments;
 
+use App\Filament\Resources\Commitments\Pages\CreateCommitment;
+use App\Filament\Resources\Commitments\Pages\EditCommitment;
 use App\Filament\Resources\Commitments\Pages\ListCommitments;
 use App\Filament\Resources\Commitments\Pages\ViewCommitment;
 use App\Filament\Resources\Commitments\Schemas\CommitmentForm;
@@ -50,8 +52,10 @@ class CommitmentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListCommitments::route('/'),
-            'view'  => ViewCommitment::route('/{record}'),
+            'index'  => ListCommitments::route('/'),
+            'create' => CreateCommitment::route('/create'),
+            'view'   => ViewCommitment::route('/{record}'),
+            'edit'   => EditCommitment::route('/{record}/edit'),
         ];
     }
 }

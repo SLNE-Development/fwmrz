@@ -55,9 +55,11 @@ class Commitment extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('thumbnail')
+            ->useDisk("public")
             ->singleFile();
 
-        $this->addMediaCollection('gallery');
+        $this->addMediaCollection('gallery')
+            ->useDisk("public");
     }
 
     public function registerMediaConversions(?Media $media = null): void

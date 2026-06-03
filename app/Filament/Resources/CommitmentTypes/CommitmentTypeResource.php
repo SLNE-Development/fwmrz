@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\CommitmentTypes;
 
+use App\Filament\Resources\CommitmentTypes\Pages\CreateCommitmentType;
+use App\Filament\Resources\CommitmentTypes\Pages\EditCommitmentType;
 use App\Filament\Resources\CommitmentTypes\Pages\ListCommitmentTypes;
 use App\Filament\Resources\CommitmentTypes\Pages\ViewCommitmentType;
 use App\Filament\Resources\CommitmentTypes\Schemas\CommitmentTypeForm;
@@ -50,8 +52,10 @@ class CommitmentTypeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListCommitmentTypes::route('/'),
-            'view'  => ViewCommitmentType::route('/{record}'),
+            'index'  => ListCommitmentTypes::route('/'),
+            'create' => CreateCommitmentType::route('/create'),
+            'view'   => ViewCommitmentType::route('/{record}'),
+            'edit'   => EditCommitmentType::route('/{record}/edit'),
         ];
     }
 }

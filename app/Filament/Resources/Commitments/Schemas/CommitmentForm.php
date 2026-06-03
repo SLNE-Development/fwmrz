@@ -4,9 +4,9 @@ namespace App\Filament\Resources\Commitments\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Schemas\Schema;
 
 class CommitmentForm
@@ -37,11 +37,14 @@ class CommitmentForm
                     ->label("Einsatzart")
                     ->relationship('type', 'name')
                     ->searchable()
+                    ->preload()
                     ->nullable(),
                 Select::make('user_id')
-                    ->label("Einsatzleiter")
+                    ->label("Autor")
                     ->relationship('author', 'name')
                     ->searchable()
+                    ->preload()
+                    ->default(auth()->id())
                     ->nullable(),
                 Select::make('publicity')
                     ->label("Sichtbarkeit")
@@ -50,6 +53,7 @@ class CommitmentForm
                         1 => 'Intern',
                         2 => 'Öffentlich',
                     ])
+                    ->default(2)
                     ->required(),
                 Select::make('stations')
                     ->label("Kräfte")

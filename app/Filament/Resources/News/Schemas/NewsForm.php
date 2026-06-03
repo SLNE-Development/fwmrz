@@ -2,12 +2,10 @@
 
 namespace App\Filament\Resources\News\Schemas;
 
-use App\Models\User;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class NewsForm
@@ -31,14 +29,15 @@ class NewsForm
                     ->required()
                     ->columnSpanFull()
                     ->live(),
-                Textarea::make('body')
+                RichEditor::make('body')
                     ->label("Inhalt")
                     ->columnSpanFull()
-                    ->rows(6)
                     ->nullable(),
                 Select::make('user_id')
                     ->label("Autor")
                     ->relationship('author', 'name')
+                    ->preload()
+                    ->default(auth()->id())
                     ->searchable()
                     ->nullable(),
                 Select::make('publicity')
@@ -48,10 +47,8 @@ class NewsForm
                         1 => 'Intern',
                         2 => 'Öffentlich',
                     ])
+                    ->default(2)
                     ->required(),
-                Toggle::make('static')
-                    ->label("Statisch")
-                    ->default(false),
                 SpatieMediaLibraryFileUpload::make('thumbnail')
                     ->label("Vorschaubild")
                     ->collection('thumbnail')

@@ -6,4 +6,45 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-fw-red:      #dc2626;
+    --color-fw-red-dark: #991b1b;
+    --color-fw-ember:    #f97316;
 }
+
+/* Class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-red {
+    0%, 100% { box-shadow: 0 0 0 0 rgb(220 38 38 / 0.4); }
+    50%       { box-shadow: 0 0 0 8px rgb(220 38 38 / 0); }
+}
+
+.animate-fade-in-up { animation: fade-in-up 0.6s ease both; }
+.animate-delay-100  { animation-delay: 0.1s; }
+.animate-delay-200  { animation-delay: 0.2s; }
+.animate-delay-300  { animation-delay: 0.3s; }
+.animate-delay-400  { animation-delay: 0.4s; }
+.pulse-red          { animation: pulse-red 2s infinite; }
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #f4f4f5; }
+::-webkit-scrollbar-thumb  { background: #dc2626; border-radius: 3px; }
+.dark ::-webkit-scrollbar-track  { background: #09090b; }
+
+/* Rich content body output */
+.rich-content { line-height: 1.7; }
+.rich-content p  { margin-bottom: 1rem; }
+.rich-content h2 { font-size: 1.4rem; font-weight: 700; margin: 1.5rem 0 .5rem; }
+.rich-content h3 { font-size: 1.15rem; font-weight: 600; margin: 1.25rem 0 .4rem; }
+.rich-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+.rich-content ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+.rich-content li { margin-bottom: .3rem; }
+.rich-content a  { color: #dc2626; text-decoration: underline; }
+.rich-content strong { font-weight: 700; }
+.rich-content em     { font-style: italic; }
+.rich-content blockquote { border-left: 3px solid #dc2626; padding-left: 1rem; margin: 1rem 0; opacity: .8; }

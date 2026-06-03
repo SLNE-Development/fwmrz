@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Stations;
 
+use App\Filament\Resources\Stations\Pages\CreateStation;
+use App\Filament\Resources\Stations\Pages\EditStation;
 use App\Filament\Resources\Stations\Pages\ListStations;
 use App\Filament\Resources\Stations\Pages\ViewStation;
 use App\Filament\Resources\Stations\Schemas\StationForm;
@@ -50,8 +52,10 @@ class StationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListStations::route('/'),
-            'view' => ViewStation::route('/{record}'),
+            'index'  => ListStations::route('/'),
+            'create' => CreateStation::route('/create'),
+            'view'   => ViewStation::route('/{record}'),
+            'edit'   => EditStation::route('/{record}/edit'),
         ];
     }
 }
