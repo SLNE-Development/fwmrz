@@ -14,18 +14,7 @@ class StationForm
                 TextInput::make('name')
                     ->label("Name")
                     ->required()
-                    ->columnSpanFull()
-                    ->afterStateUpdated(function (callable $set, ?string $state) {
-                        if ($state) {
-                            $set('slug', str()->slug($state));
-                        }
-                    })
-                    ->live(),
-                TextInput::make('slug')
-                    ->label("Slug")
-                    ->columnSpanFull()
-                    ->live()
-                    ->required(),
+                    ->columnSpanFull(),
             ]);
     }
 }

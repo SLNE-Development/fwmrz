@@ -14,18 +14,7 @@ class CommitmentTypeForm
                 TextInput::make('name')
                     ->label("Name")
                     ->required()
-                    ->columnSpanFull()
-                    ->afterStateUpdated(function (callable $set, ?string $state) {
-                        if ($state) {
-                            $set('slug', str()->slug($state));
-                        }
-                    })
-                    ->live(),
-                TextInput::make('slug')
-                    ->label("Slug")
-                    ->required()
-                    ->columnSpanFull()
-                    ->live(),
+                    ->columnSpanFull(),
                 TextInput::make('short')
                     ->label("Kürzel")
                     ->required(),
@@ -35,4 +24,3 @@ class CommitmentTypeForm
             ]);
     }
 }
-
