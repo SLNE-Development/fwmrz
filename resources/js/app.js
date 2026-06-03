@@ -1,3 +1,7 @@
+import Alpine from 'alpinejs';
+window.Alpine = Alpine;
+Alpine.start();
+
 // ── Theme (dark/light) ───────────────────────────────────────────
 // Default = light mode (no class on html)
 (function () {
@@ -32,7 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
 const header = document.getElementById('site-header');
 if (header) {
     window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 20);
+        if (window.scrollY > 10) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }, { passive: true });
 }
 

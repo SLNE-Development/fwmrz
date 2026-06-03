@@ -9,9 +9,10 @@
     <link rel="icon" href="https://feuerwehr-merzenich.de/images/favicon/favicon.ico">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
-        #site-header { background: transparent; transition: background .3s, border-color .3s, box-shadow .3s; }
-        #site-header.scrolled { background: rgba(255,255,255,.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(220,38,38,.2); }
-        html.dark #site-header.scrolled { background: rgba(9,9,11,.97); box-shadow: 0 1px 0 rgba(220,38,38,.3); }
+        #site-header { background: transparent; transition: background .4s ease, backdrop-filter .4s ease, box-shadow .4s ease, border-color .4s ease; }
+        #site-header.scrolled { background: rgba(255,255,255,.65); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); box-shadow: 0 1px 0 rgba(220,38,38,.15), 0 4px 24px rgba(0,0,0,.06); border-bottom-color: rgba(220,38,38,.12) !important; }
+        html.dark #site-header.scrolled { background: rgba(9,9,11,.60); box-shadow: 0 1px 0 rgba(220,38,38,.25), 0 4px 24px rgba(0,0,0,.3); }
+        [x-cloak] { display: none !important; }
     </style>
 </head>
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">

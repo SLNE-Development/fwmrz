@@ -13,7 +13,7 @@ use Spatie\MediaLibrary\Conversions\ImageGenerators\Pdf;
 use Spatie\MediaLibrary\Conversions\ImageGenerators\Svg;
 use Spatie\MediaLibrary\Conversions\ImageGenerators\Video;
 use Spatie\MediaLibrary\Conversions\ImageGenerators\Webp;
-use Spatie\MediaLibrary\Conversions\Jobs\PerformConversionsJob;
+use Spatie\MediaLibrary\Conversions\Jobs\PerformConversionsJob as BasePerformConversionsJob;
 use Spatie\MediaLibrary\Downloaders\DefaultDownloader;
 use Spatie\MediaLibrary\MediaCollections\FileAdder;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -131,7 +131,7 @@ return [
     /*
      * When enabled, Media Library pro will generate thumbnails for uploaded file.
      */
-    'generate_thumbnails_for_temporary_uploads' => true,
+    'generate_thumbnails_for_temporary_uploads' => false,
 
     /*
      * This is the class that is responsible for naming generated files.
@@ -269,7 +269,7 @@ return [
      * your custom jobs extend the ones provided by the package.
      */
     'jobs' => [
-        'perform_conversions' => PerformConversionsJob::class,
+        'perform_conversions' => \App\Media\PerformConversionsJob::class,
         'generate_responsive_images' => GenerateResponsiveImagesJob::class,
     ],
 

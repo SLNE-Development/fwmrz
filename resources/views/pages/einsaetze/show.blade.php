@@ -53,24 +53,49 @@
 
     {{-- Body --}}
     @if($commitment->body)
-    <div class="prose prose-invert prose-zinc prose-p:text-zinc-300 prose-headings:text-white max-w-none mb-12">
+    <div class="prose dark:prose-invert prose-zinc prose-p:text-zinc-700 dark:prose-p:text-zinc-300 prose-headings:text-zinc-900 dark:prose-headings:text-white max-w-none mb-12">
         {!! nl2br(e($commitment->body)) !!}
     </div>
     @endif
 
     {{-- Gallery --}}
     @if($commitment->hasMedia('gallery'))
-    <div class="mb-12">
+    <div class="mb-12" x-data="{
+        open: false,
+        current: '',
+        currentIndex: 0,
+        images: {{ json_encode($commitment->getMedia('gallery')->map(fn($m) => $m->getUrl())->values()) }},
+        show(url, idx) { this.current = url; this.currentIndex = idx; this.open = true; },
+        prev() { this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length; this.current = this.images[this.currentIndex]; },
+        next() { this.currentIndex = (this.currentIndex + 1) % this.images.length; this.current = this.images[this.currentIndex]; },
+    }" @keydown.escape.window="open = false" @keydown.arrow-left.window="if(open) prev()" @keydown.arrow-right.window="if(open) next()">
         <h2 class="text-lg font-bold text-white mb-4">Bilder</h2>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            @foreach($commitment->getMedia('gallery') as $media)
-            <a href="{{ $media->getUrl() }}" target="_blank"
-               class="block rounded-xl overflow-hidden border border-zinc-800 hover:border-red-700 transition-colors aspect-video">
-                <img src="{{ $media->getUrl('thumb') ?: $media->getUrl() }}"
+            @foreach($commitment->getMedia('gallery') as $i => $media)
+            <button @click="show('{{ $media->getUrl() }}', {{ $i }})"
+                    class="block rounded-xl overflow-hidden border border-zinc-800 hover:border-red-700 transition-colors aspect-video w-full cursor-zoom-in">
+                <img src="{{ $media->getUrl() }}"
                      alt="{{ $commitment->title }}"
                      class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-            </a>
+            </button>
             @endforeach
+        </div>
+
+        {{-- Lightbox --}}
+        <div x-show="open" x-cloak
+             class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+             @click.self="open = false">
+            <button @click="prev()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-zinc-800/60 hover:bg-zinc-700 rounded-full p-2 transition">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <img :src="current" class="max-h-[90vh] max-w-[90vw] object-contain rounded-xl shadow-2xl" alt="">
+            <button @click="next()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-zinc-800/60 hover:bg-zinc-700 rounded-full p-2 transition">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <button @click="open = false" class="absolute top-4 right-4 text-white/70 hover:text-white bg-zinc-800/60 hover:bg-zinc-700 rounded-full p-2 transition">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-sm" x-text="(currentIndex + 1) + ' / ' + images.length"></div>
         </div>
     </div>
     @endif
