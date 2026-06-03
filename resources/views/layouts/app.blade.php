@@ -29,8 +29,8 @@
         content="@yield('og_description', 'Offizielle Website der Freiwilligen Feuerwehr Merzenich.')">
   <meta name="twitter:image" content="@yield('og_image', asset('images/hero/hero.jpg'))">
 
-  <link rel="icon" href="/images/favicon/favicon.ico">
-  <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" href="/images/logo/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/logo/logo.png">
 
   @yield('structured_data')
   @include('layouts.ld')
