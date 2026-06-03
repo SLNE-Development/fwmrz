@@ -19,7 +19,7 @@ use UnitEnum;
 class NewsResource extends Resource
 {
     protected static ?string $model = News::class;
-    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Dashboard;
+    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Management;
 
     protected static ?string $label = "Neuigkeit";
     protected static ?string $pluralLabel = "Neuigkeiten";
@@ -51,10 +51,10 @@ class NewsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'  => ListNews::route('/'),
+            'index' => ListNews::route('/'),
             'create' => CreateNews::route('/create'),
-            'view'   => ViewNews::route('/{record}'),
-            'edit'   => EditNews::route('/{record}/edit'),
+            'view' => ViewNews::route('/{record}'),
+            'edit' => EditNews::route('/{record}/edit'),
         ];
     }
 }

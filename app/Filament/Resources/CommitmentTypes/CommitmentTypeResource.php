@@ -6,9 +6,9 @@ use App\Filament\Resources\CommitmentTypes\Pages\CreateCommitmentType;
 use App\Filament\Resources\CommitmentTypes\Pages\EditCommitmentType;
 use App\Filament\Resources\CommitmentTypes\Pages\ListCommitmentTypes;
 use App\Filament\Resources\CommitmentTypes\Pages\ViewCommitmentType;
+use App\Filament\Resources\CommitmentTypes\RelationManagers\CommitmentsRelationManager;
 use App\Filament\Resources\CommitmentTypes\Schemas\CommitmentTypeForm;
 use App\Filament\Resources\CommitmentTypes\Schemas\CommitmentTypeInfolist;
-use App\Filament\Resources\CommitmentTypes\RelationManagers\CommitmentsRelationManager;
 use App\Filament\Resources\CommitmentTypes\Tables\CommitmentTypesTable;
 use App\Models\CommitmentType;
 use App\Utils\SidebarNavigation;
@@ -20,7 +20,7 @@ use UnitEnum;
 class CommitmentTypeResource extends Resource
 {
     protected static ?string $model = CommitmentType::class;
-    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Dashboard;
+    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Management;
 
     protected static ?string $label = "Einsatzart";
     protected static ?string $pluralLabel = "Einsatzarten";
@@ -52,10 +52,10 @@ class CommitmentTypeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'  => ListCommitmentTypes::route('/'),
+            'index' => ListCommitmentTypes::route('/'),
             'create' => CreateCommitmentType::route('/create'),
-            'view'   => ViewCommitmentType::route('/{record}'),
-            'edit'   => EditCommitmentType::route('/{record}/edit'),
+            'view' => ViewCommitmentType::route('/{record}'),
+            'edit' => EditCommitmentType::route('/{record}/edit'),
         ];
     }
 }

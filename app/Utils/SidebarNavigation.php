@@ -9,13 +9,13 @@ use Illuminate\Contracts\Support\Htmlable;
 
 enum SidebarNavigation: int implements HasLabel, HasIcon
 {
-    case Dashboard = 1;
+    case Management = 1;
     case Admin = 2;
 
     public function getIcon(): string|BackedEnum|Htmlable|null
     {
         return match ($this) {
-            self::Dashboard => "heroicon-o-home",
+            self::Management => "heroicon-o-home",
             self::Admin => "heroicon-o-shield-check",
         };
     }
@@ -23,7 +23,7 @@ enum SidebarNavigation: int implements HasLabel, HasIcon
     public function getLabel(): string|Htmlable|null
     {
         return match ($this) {
-            self::Dashboard => "Dashboard",
+            self::Management => "Management",
             self::Admin => "Admin",
         };
     }

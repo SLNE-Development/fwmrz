@@ -6,9 +6,9 @@ use App\Filament\Resources\Commitments\Pages\CreateCommitment;
 use App\Filament\Resources\Commitments\Pages\EditCommitment;
 use App\Filament\Resources\Commitments\Pages\ListCommitments;
 use App\Filament\Resources\Commitments\Pages\ViewCommitment;
+use App\Filament\Resources\Commitments\RelationManagers\StationsRelationManager;
 use App\Filament\Resources\Commitments\Schemas\CommitmentForm;
 use App\Filament\Resources\Commitments\Schemas\CommitmentInfolist;
-use App\Filament\Resources\Commitments\RelationManagers\StationsRelationManager;
 use App\Filament\Resources\Commitments\Tables\CommitmentsTable;
 use App\Models\Commitment;
 use App\Utils\SidebarNavigation;
@@ -20,7 +20,7 @@ use UnitEnum;
 class CommitmentResource extends Resource
 {
     protected static ?string $model = Commitment::class;
-    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Dashboard;
+    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Management;
 
     protected static ?string $label = "Einsatz";
     protected static ?string $pluralLabel = "Einsätze";
@@ -52,10 +52,10 @@ class CommitmentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'  => ListCommitments::route('/'),
+            'index' => ListCommitments::route('/'),
             'create' => CreateCommitment::route('/create'),
-            'view'   => ViewCommitment::route('/{record}'),
-            'edit'   => EditCommitment::route('/{record}/edit'),
+            'view' => ViewCommitment::route('/{record}'),
+            'edit' => EditCommitment::route('/{record}/edit'),
         ];
     }
 }
