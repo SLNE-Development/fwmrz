@@ -4,8 +4,14 @@
 
 @section('content')
 
-<div class="bg-zinc-900 border-b border-zinc-800 pt-12 pb-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="relative bg-zinc-900 border-b border-zinc-800 pt-12 pb-10 overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="/images/kontakt/geratehaus.jpg" alt="Gerätehaus Merzenich"
+             onerror="this.style.display='none'"
+             class="w-full h-full object-cover opacity-20">
+        <div class="absolute inset-0 bg-gradient-to-r from-zinc-900 via-zinc-900/80 to-zinc-900/40"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-2 text-xs text-zinc-500 mb-3 uppercase tracking-wider">
             <a href="{{ route('home') }}" class="hover:text-red-400 transition-colors">Startseite</a>
             <span>›</span><span class="text-zinc-300">Kontakt</span>
@@ -13,6 +19,20 @@
         <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Kontakt</h1>
         <p class="text-zinc-400">Kontakt aufnehmen mit der Feuerwehr Merzenich.</p>
     </div>
+</div>
+{{-- Gerätehaus Foto Platzhalter --}}
+<div class="relative h-56 bg-zinc-100 dark:bg-zinc-800/60 border-b border-zinc-200 dark:border-zinc-800 overflow-hidden">
+    <img src="/images/kontakt/geratehaus.jpg" alt="Gerätehaus Merzenich"
+         onerror="this.style.display='none'"
+         class="w-full h-full object-cover object-center">
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 gap-2">
+        <svg class="w-12 h-12 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
+        </svg>
+        <span class="text-xs font-medium opacity-40 uppercase tracking-widest">Gerätehaus · Foto folgt</span>
+        <span class="text-xs opacity-30">→ /public/images/kontakt/geratehaus.jpg</span>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/30 to-transparent"></div>
 </div>
 
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
