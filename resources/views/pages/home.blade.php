@@ -57,11 +57,12 @@
 {{-- STATS --}}
 <section class="border-y border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-8 text-center">
             @foreach([
                 ['value'=>'~100', 'label'=>'Aktive Kameraden'],
                 ['value'=>'4',    'label'=>'Löschgruppen'],
                 ['value'=>'~30',  'label'=>'Jugendfeuerwehr'],
+                ['value'=>'~20',  'label'=>'Kinderfeuerwehr'],
                 ['value'=>'112',  'label'=>'Notruf'],
             ] as $s)
             <div>

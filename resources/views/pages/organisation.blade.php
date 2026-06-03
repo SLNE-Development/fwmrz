@@ -165,7 +165,7 @@
       class="bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 sm:p-12">
     <h2 class="text-2xl font-bold text-zinc-900 dark:text-white mb-8 text-center">Mitglieder auf
       einen Blick</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-center">
       <div>
         <div class="text-4xl font-bold text-red-600 dark:text-red-500 mb-2">~100</div>
         <div class="text-zinc-600 dark:text-zinc-400">Aktive Kameradinnen &amp; Kameraden</div>
@@ -175,8 +175,8 @@
         <div class="text-zinc-600 dark:text-zinc-400">Jugendfeuerwehr-Mitglieder</div>
       </div>
       <div>
-        <div class="text-4xl font-bold text-zinc-600 dark:text-zinc-400 mb-2">20</div>
-        <div class="text-zinc-600 dark:text-zinc-400">Kameraden in der Ehrenabteilung</div>
+        <div class="text-4xl font-bold text-sky-600 dark:text-sky-400 mb-2">~20</div>
+        <div class="text-zinc-600 dark:text-zinc-400">Kinderfeuerwehr-Mitglieder</div>
       </div>
     </div>
   </section>
