@@ -3,8 +3,6 @@
 namespace App\Filament\Resources\Stations\RelationManagers;
 
 use Filament\Actions\ActionGroup;
-use Filament\Actions\AttachAction;
-use Filament\Actions\DetachAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Columns\TextColumn;
@@ -34,7 +32,7 @@ class CommitmentsRelationManager extends RelationManager
                     ->searchable(),
                 TextColumn::make('publicity')
                     ->label("Sichtbarkeit")
-                    ->formatStateUsing(fn (int $state) => match ($state) {
+                    ->formatStateUsing(fn(int $state) => match ($state) {
                         0 => 'Privat',
                         1 => 'Intern',
                         2 => 'Öffentlich',
@@ -46,12 +44,7 @@ class CommitmentsRelationManager extends RelationManager
             ->recordActions([
                 ActionGroup::make([
                     ViewAction::make(),
-                    DetachAction::make(),
                 ])
-            ])
-            ->toolbarActions([
-                AttachAction::make()
-                    ->preloadRecordSelect(),
             ]);
     }
 }
