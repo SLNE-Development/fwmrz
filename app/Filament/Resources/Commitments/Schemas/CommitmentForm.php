@@ -3,9 +3,10 @@
 namespace App\Filament\Resources\Commitments\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Schemas\Schema;
 
 class CommitmentForm
@@ -36,14 +37,11 @@ class CommitmentForm
                     ->label("Einsatzart")
                     ->relationship('type', 'name')
                     ->searchable()
-                    ->preload()
                     ->nullable(),
                 Select::make('user_id')
-                    ->label("Autor")
+                    ->label("Einsatzleiter")
                     ->relationship('author', 'name')
                     ->searchable()
-                    ->preload()
-                    ->default(auth()->id())
                     ->nullable(),
                 Select::make('publicity')
                     ->label("Sichtbarkeit")
@@ -52,17 +50,33 @@ class CommitmentForm
                         1 => 'Intern',
                         2 => 'Öffentlich',
                     ])
-                    ->default(2)
                     ->required(),
-                TextInput::make('thumbnail')
-                    ->label("Vorschaubild")
-                    ->required()
+                Select::make('stations')
+                    ->label("Kräfte")
+                    ->relationship('stations', 'name')
+                    ->multiple()
+                    ->searchable()
+                    ->preload()
                     ->columnSpanFull(),
-                RichEditor::make('body')
+                SpatieMediaLibraryFileUpload::make('thumbnail')
+                    ->label("Vorschaubild")
+                    ->collection('thumbnail')
+                    ->image()
+                    ->imageEditor()
+                    ->columnSpanFull(),
+                SpatieMediaLibraryFileUpload::make('gallery')
+                    ->label("Galerie")
+                    ->collection('gallery')
+                    ->image()
+                    ->imageEditor()
+                    ->multiple()
+                    ->reorderable()
+                    ->columnSpanFull(),
+                Textarea::make('body')
                     ->label("Beschreibung")
                     ->columnSpanFull()
+                    ->rows(6)
                     ->nullable(),
             ]);
     }
 }
-

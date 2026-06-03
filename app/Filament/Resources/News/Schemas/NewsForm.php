@@ -2,9 +2,12 @@
 
 namespace App\Filament\Resources\News\Schemas;
 
-use Filament\Forms\Components\RichEditor;
+use App\Models\User;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Schemas\Schema;
 
 class NewsForm
@@ -28,20 +31,15 @@ class NewsForm
                     ->required()
                     ->columnSpanFull()
                     ->live(),
-                RichEditor::make('body')
+                Textarea::make('body')
                     ->label("Inhalt")
                     ->columnSpanFull()
+                    ->rows(6)
                     ->nullable(),
-                TextInput::make('thumbnail')
-                    ->label("Vorschaubild")
-                    ->required()
-                    ->columnSpanFull(),
                 Select::make('user_id')
                     ->label("Autor")
                     ->relationship('author', 'name')
-                    ->default(auth()->id())
                     ->searchable()
-                    ->preload()
                     ->nullable(),
                 Select::make('publicity')
                     ->label("Sichtbarkeit")
@@ -50,9 +48,24 @@ class NewsForm
                         1 => 'Intern',
                         2 => 'Öffentlich',
                     ])
-                    ->default(2)
                     ->required(),
+                Toggle::make('static')
+                    ->label("Statisch")
+                    ->default(false),
+                SpatieMediaLibraryFileUpload::make('thumbnail')
+                    ->label("Vorschaubild")
+                    ->collection('thumbnail')
+                    ->image()
+                    ->imageEditor()
+                    ->columnSpanFull(),
+                SpatieMediaLibraryFileUpload::make('gallery')
+                    ->label("Galerie")
+                    ->collection('gallery')
+                    ->image()
+                    ->imageEditor()
+                    ->multiple()
+                    ->reorderable()
+                    ->columnSpanFull(),
             ]);
     }
 }
-
