@@ -19,6 +19,29 @@
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
+  {{-- Year switcher + count --}}
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+    @if($news->total() > 0)
+    <p class="text-sm text-zinc-500">{{ number_format($news->total()) }} Beiträge in {{ $selectedYear }}</p>
+    @else
+    <p class="text-sm text-zinc-500">Keine Beiträge in {{ $selectedYear }}</p>
+    @endif
+
+    @if($years->count() > 0)
+    <div class="flex items-center gap-1 flex-wrap">
+      @foreach($years as $year)
+      <a href="{{ route('news.index', ['year' => $year]) }}"
+         class="px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
+                {{ $year == $selectedYear
+                   ? 'bg-red-600 text-white'
+                   : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700' }}">
+        {{ $year }}
+      </a>
+      @endforeach
+    </div>
+    @endif
+  </div>
+
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     @forelse($news as $item)
     <a href="{{ route('news.show', $item->slug) }}"
