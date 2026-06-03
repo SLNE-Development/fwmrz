@@ -103,7 +103,7 @@
       </div>
       @if($latestCommitment)
       <a href="{{ route('einsaetze.show', $latestCommitment->slug) }}"
-         class="group block bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-red-300 dark:hover:border-red-800 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-100 dark:hover:shadow-red-950/30">
+         class="group block bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-red-300 dark:hover:border-red-800 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-red-100 dark:hover:shadow-red-950/30">
         <div class="flex items-start justify-between mb-3">
           @if($latestCommitment->type)
           <span
@@ -189,40 +189,26 @@
 
       @php
       $fahrzeuge = [
-      ['name' => 'HLF 20', 'sub' => 'Hilfeleistungslöschfahrzeug', 'lg' => 'LG Merzenich', 'img' =>
-      '/images/fahrzeuge/hlf20.jpg'],
-      ['name' => 'LF 10', 'sub' => 'Löschfahrzeug', 'lg' => 'LG Golzheim', 'img' =>
-      '/images/fahrzeuge/lf10.jpg'],
-      ['name' => 'TLF 3000', 'sub' => 'Tanklöschfahrzeug', 'lg' => 'LG Morschenich', 'img' =>
-      '/images/fahrzeuge/tlf3000.jpg'],
+      ['name' => 'HLF 20-01', 'sub' => 'Hilfeleistungslöschfahrzeug', 'lg' => 'LG Merzenich', 'img'
+      =>
+      '/images/fahrzeuge/hlf20-01.jpg'],
+      ['name' => 'HLF 20-02', 'sub' => 'Hilfeleistungslöschfahrzeug', 'lg' => 'LG Golzheim', 'img'
+      =>
+      '/images/fahrzeuge/hlf20-02.jpg'],
+      ['name' => 'TLF 4000-01', 'sub' => 'Tanklöschfahrzeug', 'lg' => 'LG Merzenich', 'img' =>
+      '/images/fahrzeuge/tlf4000.jpg'],
       ];
       @endphp
 
       @foreach($fahrzeuge as $fz)
       <div
-          class="group bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-red-300 dark:hover:border-red-800 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-100 dark:hover:shadow-red-950/20">
+          class="group bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-red-300 dark:hover:border-red-800 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-red-100 dark:hover:shadow-red-950/20">
         {{-- Fahrzeugbild --}}
         <div class="relative aspect-[16/9] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
           <img src="{{ $fz['img'] }}"
                alt="{{ $fz['name'] }}"
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               class="w-full h-full object-cover"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          {{-- Fallback wenn kein Bild vorhanden --}}
-          <div
-              class="absolute inset-0 hidden items-center justify-center bg-zinc-100 dark:bg-zinc-800 flex-col gap-3"
-              style="display: flex;">
-            <svg class="w-14 h-14 text-zinc-300 dark:text-zinc-600" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor" stroke-width="1">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
-            </svg>
-            <span class="text-xs text-zinc-400 dark:text-zinc-500 font-medium">Foto folgt</span>
-          </div>
-          {{-- Rotes Label oben links --}}
-          <div class="absolute top-3 left-3">
-            <span
-                class="bg-red-600 text-white text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider shadow">{{ $fz['name'] }}</span>
-          </div>
         </div>
         <div class="p-5">
           <div class="flex items-start justify-between gap-2">
@@ -306,7 +292,7 @@
       <p class="text-zinc-300 max-w-lg mx-auto mb-8 leading-relaxed">Kinderfeuerwehr ab 6 Jahren,
         Jugendfeuerwehr ab 10 und aktiver Dienst ab 17 – wir freuen uns über jede Verstärkung.</p>
       <a href="{{ route('mitmachen') }}"
-         class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 shadow-xl shadow-red-900/40 hover:-translate-y-0.5">
+         class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 shadow-lg shadow-red-900/40 hover:-translate-y-0.5">
         Jetzt Mitmachen
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
              stroke-width="2.5">

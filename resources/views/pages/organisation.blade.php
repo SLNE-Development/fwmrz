@@ -55,15 +55,17 @@
             class="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 flex items-center gap-5">
           {{-- Foto-Placeholder Wehrleiter --}}
           <div
-              class="relative w-16 h-16 rounded-full overflow-hidden bg-zinc-200 dark:bg-zinc-700 shrink-0">
-            <img src="/images/organisation/wehrleiter.jpg"
-                 alt="Patrick Harzheim"
-                 class="w-full h-full object-cover"
-                 onerror="this.style.display='none'">
-            <div
-                class="absolute inset-0 flex items-center justify-center bg-red-100 dark:bg-red-900/40">
+              class="relative w-16 h-16 rounded-full overflow-hidden bg-red-100 dark:bg-red-900/40 shrink-0">
+            {{-- Fallback Initialen – wird ausgeblendet sobald Foto geladen --}}
+            <div id="wehrleiter-initials"
+                 class="absolute inset-0 flex items-center justify-center">
               <span class="text-xl font-bold text-red-600 dark:text-red-400">PH</span>
             </div>
+            <img src="/images/organisation/wehrleiter.jpg"
+                 alt="Patrick Harzheim"
+                 class="absolute inset-0 w-full h-full object-cover"
+                 onload="document.getElementById('wehrleiter-initials').style.display='none'"
+                 onerror="this.style.display='none'">
           </div>
           <div class="flex-1 min-w-0">
             <div class="font-bold text-zinc-900 dark:text-white">Patrick Harzheim</div>
@@ -83,7 +85,7 @@
       {{-- Foto Gerätehaus / Wache --}}
       <div
           class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-        <img src="/images/organisation/geratehaus.jpg"
+        <img src="/images/organisation/rathaus.jpg"
              alt="Gerätehaus Merzenich"
              class="absolute inset-0 w-full h-full object-cover"
              onerror="this.style.display='none'">
@@ -93,11 +95,11 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                   d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
           </svg>
-          <span class="text-sm font-medium">Gerätehaus · Foto folgt</span>
+          <span class="text-sm font-medium">Rathaus · Foto folgt</span>
         </div>
         <div
             class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 hidden">
-          <p class="text-white text-sm font-medium">Gerätehaus Merzenich</p>
+          <p class="text-white text-sm font-medium">Rathaus Merzenich</p>
         </div>
       </div>
     </div>
@@ -117,7 +119,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       @foreach([
-      ['name' => 'Merzenich', 'founded' => '1923', 'img' => 'merzenich.jpg'],
+      ['name' => 'Merzenich', 'founded' => '1923', 'img' => 'merzenich.png'],
       ['name' => 'Golzheim', 'founded' => '1934', 'img' => 'golzheim.jpg'],
       ['name' => 'Morschenich', 'founded' => '1928', 'img' => 'morschenich.jpg'],
       ['name' => 'Girbelsrath', 'founded' => '1953', 'img' => 'girbelsrath.jpg'],
@@ -129,7 +131,7 @@
             class="relative aspect-[4/3] bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden">
           <img src="/images/loeschgruppen/{{ $lg['img'] }}"
                alt="LG {{ $lg['name'] }}"
-               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               class="absolute inset-0 w-full h-full object-cover"
                onerror="this.style.display='none'">
           <div class="flex flex-col items-center gap-2 text-zinc-300 dark:text-zinc-600">
             {{-- Feuerwehrhelm statt Flamme --}}
@@ -153,6 +155,9 @@
             </li>
             <li class="flex items-center gap-2"><span
                   class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>Jugendfeuerwehr
+            </li>
+            <li class="flex items-center gap-2"><span
+                  class="w-1.5 h-1.5 rounded-full bg-sky-600 shrink-0"></span>Kinderfeuerwehr
             </li>
             <li class="flex items-center gap-2"><span
                   class="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0"></span>Ehrenabteilung
