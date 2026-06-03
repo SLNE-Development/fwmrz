@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Datenschutzerklärung | Freiwillige Feuerwehr Merzenich')
+@section('description', 'Datenschutzerklärung der Freiwilligen Feuerwehr Merzenich gemäß DSGVO.')
+@section('canonical', route('datenschutz'))
+@section('robots', 'noindex, follow')
 
 @section('content')
 <div class="bg-zinc-900 border-b border-zinc-800 pt-12 pb-10">

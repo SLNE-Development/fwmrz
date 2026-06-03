@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Startseite | Freiwillige Feuerwehr Merzenich')
+@section('title', 'Freiwillige Feuerwehr Merzenich – Wir schützen Merzenich')
+@section('description', 'Offizielle Website der Freiwilligen Feuerwehr Merzenich. Vier Löschgruppen, rund 100 ehrenamtliche Kameradinnen und Kameraden – rund um die Uhr einsatzbereit.')
+@section('canonical', url('/'))
+@section('og_title', 'Freiwillige Feuerwehr Merzenich')
+@section('og_description', 'Vier Löschgruppen, rund 100 ehrenamtliche Kameradinnen und Kameraden – rund um die Uhr einsatzbereit für die Gemeinde Merzenich.')
 @section('content')
 
 {{-- HERO --}}

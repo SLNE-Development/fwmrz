@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Mitmachen | Freiwillige Feuerwehr Merzenich')
-@section('description', 'Werde Mitglied der Freiwilligen Feuerwehr Merzenich oder der Jugendfeuerwehr.')
+@section('description', 'Jetzt Mitglied werden bei der Freiwilligen Feuerwehr Merzenich – Kinderfeuerwehr ab 6, Jugendfeuerwehr ab 10, aktiver Einsatzdienst ab 17 Jahren.')
+@section('canonical', route('mitmachen'))
+@section('og_title', 'Mitmachen – Freiwillige Feuerwehr Merzenich')
+@section('og_description', 'Jetzt Mitglied werden – Kinderfeuerwehr ab 6, Jugendfeuerwehr ab 10, aktiver Einsatzdienst ab 17 Jahren.')
 
 @section('content')
 

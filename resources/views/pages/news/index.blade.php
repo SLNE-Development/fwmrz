@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Aktuelles | Freiwillige Feuerwehr Merzenich')
-@section('description', 'Neuigkeiten und Berichte der Freiwilligen Feuerwehr Merzenich.')
+@php $canonicalYear = $selectedYear != now()->year ? ['year' => $selectedYear] : []; @endphp
+
+@section('title', 'Aktuelles ' . $selectedYear . ' | Freiwillige Feuerwehr Merzenich')
+@section('description', 'Neuigkeiten und Berichte der Freiwilligen Feuerwehr Merzenich aus dem Jahr ' . $selectedYear . '.')
+@section('canonical', route('news.index', $canonicalYear))
+@section('og_title', 'Aktuelles ' . $selectedYear . ' – Freiwillige Feuerwehr Merzenich')
+@section('og_description', 'Neuigkeiten und Berichte der Freiwilligen Feuerwehr Merzenich aus dem Jahr ' . $selectedYear . '.')
 
 @section('content')
 

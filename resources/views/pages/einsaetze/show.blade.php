@@ -1,7 +1,40 @@
 @extends('layouts.app')
 
 @section('title', $commitment->title . ' | Einsätze | Freiwillige Feuerwehr Merzenich')
-@section('description', Str::limit(strip_tags($commitment->body ?? ''), 160))
+@section('description', Str::limit(strip_tags($commitment->body ?? ''), 160) ?: 'Einsatzbericht der Freiwilligen Feuerwehr Merzenich.')
+@section('canonical', route('einsaetze.show', $commitment->slug))
+@section('og_type', 'article')
+@section('og_title', $commitment->title . ' | Freiwillige Feuerwehr Merzenich')
+@section('og_description', Str::limit(strip_tags($commitment->body ?? ''), 160) ?: 'Einsatzbericht der Freiwilligen Feuerwehr Merzenich.')
+@section('og_image', $commitment->hasMedia('thumbnail') ? $commitment->getFirstMediaUrl('thumbnail') : asset('images/hero/hero.jpg'))
+
+@section('structured_data')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ Js::from($commitment->title) }},
+  "description": {{ Js::from(Str::limit(strip_tags($commitment->body ?? ''), 160)) }},
+  "datePublished": "{{ $commitment->start->toIso8601String() }}",
+  "dateModified": "{{ $commitment->updated_at->toIso8601String() }}",
+  "image": "{{ $commitment->hasMedia('thumbnail') ? $commitment->getFirstMediaUrl('thumbnail') : asset('images/hero/hero.jpg') }}",
+  "url": "{{ route('einsaetze.show', $commitment->slug) }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Freiwillige Feuerwehr Merzenich",
+    "url": "{{ url('/') }}"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Startseite","item":"{{ url('/') }}"},
+      {"@type":"ListItem","position":2,"name":"Einsätze","item":"{{ route('einsaetze.index') }}"},
+      {"@type":"ListItem","position":3,"name": {{ Js::from($commitment->title) }} ,"item":"{{ route('einsaetze.show', $commitment->slug) }}"}
+    ]
+  }
+}
+</script>
+@endsection
 
 @section('content')
 

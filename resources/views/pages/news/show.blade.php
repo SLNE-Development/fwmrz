@@ -1,7 +1,40 @@
 @extends('layouts.app')
 
-@section('title', $news->title . ' | Freiwillige Feuerwehr Merzenich')
-@section('description', Str::limit(strip_tags($news->body ?? ''), 160))
+@section('title', $news->title . ' | Aktuelles | Freiwillige Feuerwehr Merzenich')
+@section('description', Str::limit(strip_tags($news->body ?? ''), 160) ?: 'Neuigkeit der Freiwilligen Feuerwehr Merzenich.')
+@section('canonical', route('news.show', $news->slug))
+@section('og_type', 'article')
+@section('og_title', $news->title . ' | Freiwillige Feuerwehr Merzenich')
+@section('og_description', Str::limit(strip_tags($news->body ?? ''), 160) ?: 'Neuigkeit der Freiwilligen Feuerwehr Merzenich.')
+@section('og_image', $news->hasMedia('thumbnail') ? $news->getFirstMediaUrl('thumbnail') : asset('images/hero/hero.jpg'))
+
+@section('structured_data')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ Js::from($news->title) }},
+  "description": {{ Js::from(Str::limit(strip_tags($news->body ?? ''), 160)) }},
+  "datePublished": "{{ $news->created_at->toIso8601String() }}",
+  "dateModified": "{{ $news->updated_at->toIso8601String() }}",
+  "image": "{{ $news->hasMedia('thumbnail') ? $news->getFirstMediaUrl('thumbnail') : asset('images/hero/hero.jpg') }}",
+  "url": "{{ route('news.show', $news->slug) }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Freiwillige Feuerwehr Merzenich",
+    "url": "{{ url('/') }}"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Startseite","item":"{{ url('/') }}"},
+      {"@type":"ListItem","position":2,"name":"Aktuelles","item":"{{ route('news.index') }}"},
+      {"@type":"ListItem","position":3,"name": {{ Js::from($news->title) }} ,"item":"{{ route('news.show', $news->slug) }}"}
+    ]
+  }
+}
+</script>
+@endsection
 
 @section('content')
 

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Kontakt | Freiwillige Feuerwehr Merzenich')
+@section('description', 'Kontakt zur Freiwilligen Feuerwehr Merzenich – Adresse, Telefon, E-Mail und Kontaktformular.')
+@section('canonical', route('kontakt'))
+@section('og_title', 'Kontakt – Freiwillige Feuerwehr Merzenich')
+@section('og_description', 'Kontakt zur Freiwilligen Feuerwehr Merzenich – Adresse, Telefon, E-Mail und Kontaktformular.')
 @section('description', 'Kontaktieren Sie die Freiwillige Feuerwehr Merzenich.')
 
 @section('content')

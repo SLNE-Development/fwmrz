@@ -3,11 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>@yield('title', 'Freiwillige Feuerwehr Merzenich')</title>
   <meta name="description"
-        content="@yield('description', 'Offizielle Website der Freiwilligen Feuerwehr Merzenich – Wir schützen Merzenich.')">
+        content="@yield('description', 'Offizielle Website der Freiwilligen Feuerwehr Merzenich – vier Löschgruppen, rund 100 ehrenamtliche Kameradinnen und Kameraden.')">
+  <meta name="robots" content="@yield('robots', 'index, follow')">
+  <link rel="canonical" href="@yield('canonical', url()->current())">
   <meta name="theme-color" content="#dc2626">
-  <link rel="icon" href="https://feuerwehr-merzenich.de/images/favicon/favicon.ico">
+
+  <meta property="og:site_name" content="Freiwillige Feuerwehr Merzenich">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="@yield('og_type', 'website')">
+  <meta property="og:title" content="@yield('og_title', 'Freiwillige Feuerwehr Merzenich')">
+  <meta property="og:description"
+        content="@yield('og_description', 'Offizielle Website der Freiwilligen Feuerwehr Merzenich – vier Löschgruppen, rund 100 ehrenamtliche Kameradinnen und Kameraden.')">
+  <meta property="og:url" content="@yield('canonical', url()->current())">
+  <meta property="og:image" content="@yield('og_image', asset('images/hero/hero.jpg'))">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="@yield('og_title', 'Freiwillige Feuerwehr Merzenich')">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="@yield('og_title', 'Freiwillige Feuerwehr Merzenich')">
+  <meta name="twitter:description"
+        content="@yield('og_description', 'Offizielle Website der Freiwilligen Feuerwehr Merzenich.')">
+  <meta name="twitter:image" content="@yield('og_image', asset('images/hero/hero.jpg'))">
+
+  <link rel="icon" href="/images/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
+
+  @yield('structured_data')
+  @include('layouts.ld')
+
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   <style>
     #site-header {
@@ -44,7 +71,6 @@
 <!--        </span>-->
 <!--    </div>-->
 
-{{-- Header --}}
 <header id="site-header" class="sticky top-0 z-50 border-b border-transparent">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-18">
@@ -140,15 +166,26 @@
           E-Mail: <a href="mailto:wehrleitung@gemeinde-merzenich.de"
                      class="hover:text-red-600 dark:hover:text-red-400 transition-colors">wehrleitung@gemeinde-merzenich.de</a>
         </p>
-        <a href="https://www.facebook.com/Freiwillige-Feuerwehr-Merzenich-394835230701997/"
-           target="_blank" rel="nofollow noreferrer"
-           class="inline-flex items-center gap-2 text-zinc-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-          Facebook
-        </a>
+        <div class="flex flex-col gap-1 justify-center">
+          <a href="https://www.facebook.com/Freiwillige-Feuerwehr-Merzenich-394835230701997/"
+             target="_blank" rel="nofollow noreferrer"
+             class="inline-flex items-center gap-2 text-zinc-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+          <a href="https://www.instagram.com/feuerwehr_merzenich/"
+             target="_blank" rel="nofollow noreferrer"
+             class="inline-flex items-center gap-2 text-zinc-500 dark:text-zinc-400 hover:text-pink-600 dark:hover:text-pink-400 text-sm transition-colors mt-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3h-8.5zm10.71-.21a1.21 1.21 0 11-2.42-.01c0 .67.54 1.21 1.21 1.21s1.21-.54 1.21-1.21zM12 7a5 5 0 110 10A5 5 0 0112 7zm0 1.5a3.5 3.5 0 100 7a3.5 3.5 0 000-7z"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
       </div>
 
       <div>

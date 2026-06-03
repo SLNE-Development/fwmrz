@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Impressum | Freiwillige Feuerwehr Merzenich')
+@section('description', 'Impressum der Freiwilligen Feuerwehr Merzenich gemäß § 5 TMG.')
+@section('canonical', route('impressum'))
+@section('robots', 'noindex, follow')
 
 @section('content')
 <div class="bg-zinc-900 border-b border-zinc-800 pt-12 pb-10">

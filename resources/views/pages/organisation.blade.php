@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('title', 'Organisation | Freiwillige Feuerwehr Merzenich')
-@section('description', 'Die Organisation der Freiwilligen Feuerwehr Merzenich – Wehrleitung, Löschgruppen, Ausbildung und mehr.')
+@section('description', 'Wehrleitung, Löschgruppen, Ausbildung und Mitgliederzahlen der Freiwilligen Feuerwehr Merzenich im Überblick.')
+@section('canonical', route('organisation'))
+@section('og_title', 'Organisation – Freiwillige Feuerwehr Merzenich')
+@section('og_description', 'Wehrleitung, Löschgruppen, Ausbildung und Mitgliederzahlen der Freiwilligen Feuerwehr Merzenich im Überblick.')
 
 @section('content')
 
