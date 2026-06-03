@@ -66,7 +66,8 @@
 {{-- STATS --}}
 <section class="border-y border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="grid grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+    <div
+        class="grid grid-cols-2 lg:grid-cols-5 gap-8 text-center items-center justify-center justify-items-center">
       @foreach([
       ['value'=>'~100', 'label'=>'Aktive Kameraden'],
       ['value'=>'4', 'label'=>'Löschgruppen'],
@@ -237,10 +238,10 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       @foreach([
-      ['name' => 'Merzenich', 'founded' => '1923'],
-      ['name' => 'Golzheim', 'founded' => '1934'],
-      ['name' => 'Morschenich', 'founded' => '1928'],
-      ['name' => 'Girbelsrath', 'founded' => '1953'],
+      ['name' => 'Merzenich'],
+      ['name' => 'Golzheim'],
+      ['name' => 'Morschenich'],
+      ['name' => 'Girbelsrath'],
       ] as $lg)
       <div
           class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-red-300 dark:hover:border-red-700/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group">
@@ -257,7 +258,6 @@
           </svg>
         </div>
         <h3 class="font-bold text-zinc-900 dark:text-white text-lg mb-0.5">LG {{ $lg['name'] }}</h3>
-        <p class="text-xs text-zinc-400 dark:text-zinc-500 mb-3">Gegründet {{ $lg['founded'] }}</p>
         <div class="flex flex-col gap-1">
           <div class="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400">
             <span class="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>Aktive Abteilung

@@ -119,7 +119,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       @foreach([
-      ['name' => 'Merzenich', 'founded' => '1923', 'img' => 'merzenich.png'],
+      ['name' => 'Merzenich', 'founded' => '1910', 'img' => 'merzenich.png'],
       ['name' => 'Golzheim', 'founded' => '1934', 'img' => 'golzheim.jpg'],
       ['name' => 'Morschenich', 'founded' => '1928', 'img' => 'morschenich.jpg'],
       ['name' => 'Girbelsrath', 'founded' => '1953', 'img' => 'girbelsrath.jpg'],
