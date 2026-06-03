@@ -10,6 +10,10 @@ class NewsController extends Controller
 {
     public function index(Request $request): View
     {
+        $request->validate([
+            'year' => ['sometimes', 'integer', 'min:2000', 'max:' . (now()->year + 1)],
+        ]);
+
         $selectedYear = $request->integer('year') ?: now()->year;
 
         $years = News::query()
