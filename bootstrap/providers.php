@@ -1,7 +1,9 @@
 <?php
 
-use App\Providers\AppServiceProvider;
+use SLNE\FilamentAuthorization\Providers\FilamentAuthServiceProvider;
 
 return [
-    AppServiceProvider::class,
+    App\Providers\AppServiceProvider::class,
+    FilamentAuthServiceProvider::class,
+    App\Providers\Filament\AdminPanelProvider::class,
 ];
