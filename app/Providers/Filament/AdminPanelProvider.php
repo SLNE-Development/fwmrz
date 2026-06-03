@@ -77,7 +77,6 @@ class AdminPanelProvider extends PanelProvider
             ->id("admin")
             ->path("/admin")
             ->login()
-            ->registration()
             ->maxContentWidth(Width::Full)
             ->readOnlyRelationManagersOnResourceViewPagesByDefault(false)
             ->sidebarFullyCollapsibleOnDesktop()
@@ -104,7 +103,7 @@ class AdminPanelProvider extends PanelProvider
                     ->withNavigationSortIndex(100)
                     ->withUserModel(User::class)
             )
-            ->favicon(asset('images/logo/logo.png'))
+            ->favicon(asset('images/logo/favicon.ico'))
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages');

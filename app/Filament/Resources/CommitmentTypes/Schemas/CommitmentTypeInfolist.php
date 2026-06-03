@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Filament\Resources\CommitmentTypes\Schemas;
+
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Schema;
+
+class CommitmentTypeInfolist
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextEntry::make('name')
+                    ->label("Name"),
+                TextEntry::make('slug')
+                    ->label("Slug"),
+                TextEntry::make('short')
+                    ->label("Kürzel"),
+                TextEntry::make('aaoName')
+                    ->label("AAO-Bezeichnung"),
+                TextEntry::make('created_at')
+                    ->label("Erstellt am")
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('updated_at')
+                    ->label("Aktualisiert am")
+                    ->dateTime()
+                    ->placeholder('-'),
+            ]);
+    }
+}
+

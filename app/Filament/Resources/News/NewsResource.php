@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Filament\Resources\News;
+
+use App\Filament\Resources\News\Pages\ListNews;
+use App\Filament\Resources\News\Pages\ViewNews;
+use App\Filament\Resources\News\Schemas\NewsForm;
+use App\Filament\Resources\News\Schemas\NewsInfolist;
+use App\Filament\Resources\News\Tables\NewsTable;
+use App\Models\News;
+use App\Utils\SidebarNavigation;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Tables\Table;
+use UnitEnum;
+
+class NewsResource extends Resource
+{
+    protected static ?string $model = News::class;
+    protected static string|UnitEnum|null $navigationGroup = SidebarNavigation::Dashboard;
+
+    protected static ?string $label = "Neuigkeit";
+    protected static ?string $pluralLabel = "Neuigkeiten";
+
+    protected static ?string $recordTitleAttribute = 'title';
+
+    public static function form(Schema $schema): Schema
+    {
+        return NewsForm::configure($schema);
+    }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return NewsInfolist::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return NewsTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListNews::route('/'),
+            'view'  => ViewNews::route('/{record}'),
+        ];
+    }
+}
+
