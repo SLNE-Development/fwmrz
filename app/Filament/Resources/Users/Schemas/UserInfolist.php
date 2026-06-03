@@ -30,24 +30,6 @@ class UserInfolist
                         ->label('Erstellt am')
                         ->dateTime('d.m.Y H:i'),
                 ]),
-
-            Section::make('Rollen')
-                ->schema([
-                    TextEntry::make('roles.name')
-                        ->label('Zugewiesene Rollen')
-                        ->badge()
-                        ->color('warning')
-                        ->placeholder('Keine Rollen zugewiesen'),
-                ]),
-
-            Section::make('Direkte Berechtigungen')
-                ->schema([
-                    TextEntry::make('permissions.name')
-                        ->label('Direkte Berechtigungen')
-                        ->badge()
-                        ->color('info')
-                        ->placeholder('Keine direkten Berechtigungen'),
-                ]),
         ]);
     }
 }
