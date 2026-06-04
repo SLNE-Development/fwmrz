@@ -20,7 +20,6 @@ class NewsForm
                     ->columnSpanFull(),
                 RichEditor::make('body')
                     ->label("Inhalt")
-                    ->extraAttributes(['style' => 'min-height: 300px;'])
                     ->columnSpanFull()
                     ->toolbarButtons([
                         'bold', 'italic', 'underline', 'strike',
