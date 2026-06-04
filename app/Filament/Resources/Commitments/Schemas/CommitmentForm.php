@@ -68,6 +68,7 @@ class CommitmentForm
                 RichEditor::make('body')
                     ->label("Beschreibung")
                     ->columnSpanFull()
+                    ->extraAttributes(['style' => 'min-height: 300px;'])
                     ->toolbarButtons([
                         'bold', 'italic', 'underline', 'strike',
                         'h2', 'h3',
