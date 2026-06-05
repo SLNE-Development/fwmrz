@@ -215,7 +215,6 @@
         <ul class="space-y-2">
           @foreach([
           ['url' => 'https://gemeinde-merzenich.de', 'label' => 'Gemeinde Merzenich'],
-          ['url' => 'https://www.kfv-dueren.de/', 'label' => 'Kreisfeuerwehrverband Düren'],
           ['url' => 'https://nobiz-eifel-rur.de/', 'label' => 'Notfallbildungszentrum Eifel-Rur'],
           ] as $p)
           <li>
